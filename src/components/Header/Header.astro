@@ -1,0 +1,72 @@
+---
+import Github from "./Links/Github.astro";
+import Linkedin from "./Links/Linkedin.astro";
+---
+
+<header>
+  <h1>Juan Alcaraz</h1>
+  <h2>Senior frontend engineer</h2>
+  <p class="description">
+    I build pixel-perfect, engaging, and accessible digital experiences.
+  </p>
+  <nav>
+    <Linkedin />
+    <Github />
+  </nav>
+</header>
+
+<style>
+  header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 340px;
+
+    @media (min-width: 800px) {
+      height: 500px;
+      flex: 0.5;
+      position: sticky;
+      top: 96px;
+    }
+  }
+
+  header p {
+    max-width: 320px;
+  }
+
+  @keyframes cursor {
+    0% {
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  h1 {
+    display: inline-flex;
+    gap: 8px;
+    align-items: flex-end;
+  }
+
+  h1::after {
+    display: block;
+    height: 6px;
+    width: 15px;
+    content: "";
+    background-color: white;
+    margin-bottom: 12px;
+
+    animation: cursor 2s infinite;
+  }
+
+  nav {
+    display: inline-flex;
+    gap: 12px;
+  }
+</style>
